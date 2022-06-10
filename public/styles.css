@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --default-color: #0060e5;
+  --default-text-color: #cbe1ff;
+  --white: #ffffff;
+  --black--first: #363e4d;
+  --black--second: #242933;
+  --main-black: #161a20;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: var(--default-color);
+}
+
+.App {
+  display: grid;
+  grid-auto-rows: 539px;
+  padding: 1rem 0rem;
+}
+
+body {
+  background-color: #e5e5e5;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none !important;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container .calculator {
+  height: 90vh;
+  width: 330px;
+  background-color: var(--main-black);
+  border-radius: 0.5rem;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  border: unset;
+  box-shadow: unset;
+  color: var(--default-text-color);
+  cursor: pointer;
+}
+
+button.special,
+button.special.sign {
+  background-color: var(--default-color);
+}
+
+.c-wrapper {
+  display: grid;
+  grid-auto-rows: 28% 11% 10% 51%;
+  height: 100%;
+}
+
+.ctc {
+  padding: 0.5rem 1rem;
+}
+
+.c-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transition: all 0.5s linear;
+}
+
+.c-char-remain {
+  background-color: var(--black--first);
+  padding: 0.2rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--default-text-color);
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.c-compute {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: var(--white);
+  font-weight: 900;
+}
+
+.c-result {
+  background-color: var(--main-black);
+  padding: 0.4rem 1rem;
+  display: grid;
+  grid-template-columns: minmax(0px, 50px) repeat(2, 1fr);
+
+  font-size: 1.1rem;
+  font-weight: 300;
+  transition: all 0.5s linear;
+  overflow: hidden;
+}
+
+.c-result span {
+  letter-spacing: 0.1rem;
+  color: var(--default-text-color);
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow-y: scroll;
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.c-result span::-webkit-scrollbar {
+  display: none !important;
+}
+
+.c-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--black--first);
+}
+
+.c-menu > button {
+  background-color: unset;
+}
+
+.c-menu .delete-btn {
+  color: var(--default-text-color);
+  cursor: pointer;
+}
+
+.c-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0.5rem;
+}
+
+.c-grid > button {
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.5s linear;
+  text-transform: uppercase;
+  background-color: var(--black--second);
+  border: 2px solid var(--main-black);
+}
+
+.c-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.c-grid > button.operator-btn {
+  background-color: var(--black--first);
+}
+
+.c-grid > button.normal-btn {
+  background-color: var(--black--second);
+}
+
+.c-grid > button.special-btn {
+  background-color: var(--default-color);
+}
+
+.c-grid > button.clear-btn {
+  background-color: tomato;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: unset;
+    width: 750px;
+  }
+}
